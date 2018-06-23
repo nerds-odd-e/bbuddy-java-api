@@ -1,0 +1,23 @@
+spring:
+    datasource:
+        url: jdbc:mysql://localhost:3306/bbuddy?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC
+        password: dbs3cr3t
+        testWhileIdle: true
+        username: nerd
+        validationQuery: SELECT 1
+    jpa:
+        hibernate:
+            ddl-auto: update
+            naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
+        properties:
+            hibernate:
+                default_schema: bbuddy
+                dialect: org.hibernate.dialect.MySQL5Dialect
+        show-sql: true
+
+security:
+  jwt:
+    secret: SecretKeyToGenJWTs
+    expirationTime: 860000000
+    tokenPrefix: "Bearer "
+    headerString: "Authorization"
