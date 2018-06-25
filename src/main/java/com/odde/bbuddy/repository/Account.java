@@ -16,7 +16,7 @@ import javax.validation.constraints.NotNull;
 )
 public class Account {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     @NotBlank

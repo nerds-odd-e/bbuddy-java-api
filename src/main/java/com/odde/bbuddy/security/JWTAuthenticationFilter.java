@@ -46,6 +46,14 @@ public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilte
     }
 
     @Override
+    protected void unsuccessfulAuthentication(HttpServletRequest request, HttpServletResponse response, AuthenticationException failed) throws IOException, ServletException {
+//        super.unsuccessfulAuthentication(request, response, failed);
+        response.setStatus(401);
+        response.addHeader("content-type", "application/json");
+        response.getOutputStream().println("{}");
+    }
+
+    @Override
     protected void successfulAuthentication(HttpServletRequest request, HttpServletResponse response, FilterChain chain, Authentication authResult) throws IOException, ServletException {
         String token = Jwts.builder()
                 .setSubject(((User) authResult.getPrincipal()).getUsername())
@@ -53,6 +61,7 @@ public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilte
                 .signWith(SignatureAlgorithm.HS512, config.getSecret().getBytes())
                 .compact();
         response.addHeader(config.getHeaderString(), config.getTokenPrefix() + token);
+        response.addHeader("content-type", "application/json");
         response.getOutputStream().println("{}");
     }
 }
