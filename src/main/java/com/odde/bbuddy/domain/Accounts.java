@@ -27,7 +27,7 @@ public class Accounts implements FieldCheck<String> {
     }
 
     public List<Account> all() {
-        return null;
+        return accountRepository.findAll();
     }
 }
 
