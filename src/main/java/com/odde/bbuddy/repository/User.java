@@ -1,16 +1,11 @@
 package com.odde.bbuddy.repository;
 
-import lombok.Getter;
-import lombok.NonNull;
-import lombok.RequiredArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 
 @Entity
-@Getter
-@Setter
-@RequiredArgsConstructor
+@Data
 @Table(
         uniqueConstraints = @UniqueConstraint(columnNames = {"email"})
 )

@@ -10,7 +10,7 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
-public class UsersTest {
+class UsersTest {
     @Test
     void encrypt_password_when_sign_up(){
         BCryptPasswordEncoder encoder = mock(BCryptPasswordEncoder.class);
