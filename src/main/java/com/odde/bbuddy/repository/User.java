@@ -2,6 +2,7 @@ package com.odde.bbuddy.repository;
 
 import lombok.Getter;
 import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
@@ -9,6 +10,7 @@ import javax.persistence.*;
 @Entity
 @Getter
 @Setter
+@RequiredArgsConstructor
 @Table(
         uniqueConstraints = @UniqueConstraint(columnNames = {"email"})
 )
