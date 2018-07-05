@@ -22,3 +22,7 @@ Add SPRING_PROFILES_ACTIVE=test environment variable to run for test purpose (cu
 SPRING_PROFILES_ACTIVE=test ./gradlew bootRun 
 ```
 
+## Lombok plugin
+If you are using IntelliJ, install lombok plugin and enable annotation processing
+![lombok](/../screenshots/images/lombok.jpg "Enable Annotation Processing")
+
