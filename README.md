@@ -4,12 +4,13 @@
 Installing MySQL
 Or using Docker
 ```zsh
-docker run -d -p 3306:3306 -e "MYSQL_ALLOW_EMPTY_PASSWORD=yes" -e "MYSQL_USER=nerd" -e "MYSQL_PASSWORD=dbs3cr3t" -e "MYSQL_DATABASE=bbuddy" --name "bbuddy_mysql" mysql --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci --max-allowed-packet=67108864
+docker run -d -p 3306:3306 -e "MYSQL_ALLOW_EMPTY_PASSWORD=yes" --name "bbuddy_mysql" mysql --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci --max-allowed-packet=67108864
 ```
 
 ### Create dba with privileges
+Wait for mysql has been fully initialized.
 ```zsh
-mysql -uroot -h localhost -P 3306 --protocol=tcp < sql/create_default_dba.sql
+ mysql -u root -h 127.0.0.1 -P 3306 < sql/create_default_dba.sql
 ```
 
 ## Run

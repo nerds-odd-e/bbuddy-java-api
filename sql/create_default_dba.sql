@@ -1,3 +1,3 @@
-CREATE USER 'nerd'@'localhost' IDENTIFIED BY 'dbs3cr3t';
-GRANT ALL PRIVILEGES ON *.* TO 'nerd'@'localhost';
+CREATE USER IF NOT EXISTS 'nerd'@'%' IDENTIFIED BY 'dbs3cr3t';
+GRANT ALL PRIVILEGES ON *.* TO 'nerd'@'%';
 FLUSH PRIVILEGES;
