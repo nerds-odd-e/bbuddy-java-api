@@ -44,6 +44,7 @@ dependencies {
     )
     testRuntime('org.junit.jupiter:junit-jupiter-engine:5.2.0')
 }
+
 test {
     useJUnitPlatform()
     testLogging {
@@ -58,4 +59,11 @@ test {
                     "${result.skippedTestCount} skipped"
         }
     }
+}
+
+task bootRunTest {
+}
+
+bootRunTest.finalizedBy bootRun {
+    environment "SPRING_PROFILES_ACTIVE", "test"
 }
