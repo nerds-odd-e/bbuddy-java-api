@@ -3,6 +3,7 @@ package com.odde.bbuddy.repository;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
 
 import javax.persistence.*;
 import javax.validation.constraints.Min;
@@ -10,6 +11,7 @@ import javax.validation.constraints.NotBlank;
 
 @Entity
 @Data
+@RequiredArgsConstructor
 @NoArgsConstructor
 @Table(
         uniqueConstraints = @UniqueConstraint(columnNames = {"name"})

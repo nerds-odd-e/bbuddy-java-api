@@ -6,6 +6,7 @@ import javax.persistence.*;
 
 @Entity
 @Data
+@RequiredArgsConstructor
 @NoArgsConstructor
 @Table(
         uniqueConstraints = @UniqueConstraint(columnNames = {"email"})
