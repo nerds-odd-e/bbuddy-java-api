@@ -1,8 +1,7 @@
 package com.odde.bbuddy.repository;
 
-import com.odde.bbuddy.domain.Accounts;
-import com.odde.bbuddy.validator.Unique;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.NonNull;
 
 import javax.persistence.*;
@@ -11,6 +10,7 @@ import javax.validation.constraints.NotBlank;
 
 @Entity
 @Data
+@NoArgsConstructor
 @Table(
         uniqueConstraints = @UniqueConstraint(columnNames = {"name"})
 )
