@@ -20,7 +20,6 @@ public class Account {
     private long id;
 
     @NotBlank
-//    @Unique(fieldCheck = Accounts.class)
     @NonNull
     private String name;
 
